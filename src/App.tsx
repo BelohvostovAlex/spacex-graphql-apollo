@@ -1,26 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useQuery } from '@apollo/client';
 
-function App() {
+import { GET_ROCKET } from './graphql/queries/getRocket';
+import { RocketBlock } from './components/RocketBlock';
+import { RocketsQuery, RocketsQueryVariables } from './generated/graphql';
+
+export const App = () => {
+  const { data, loading } = useQuery<RocketsQuery, RocketsQueryVariables>(
+    GET_ROCKET,
+    {
+      variables: {
+        limit: 4,
+      },
+    }
+  );
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      {data?.rockets &&
+        data.rockets.map((rocket) => (
+          <RocketBlock
+            key={rocket?.id}
+            name={rocket?.name}
+            description={rocket?.description}
+            engines={rocket?.engines}
+            type={rocket?.type}
+          />
+        ))}
     </div>
   );
-}
-
-export default App;
+};

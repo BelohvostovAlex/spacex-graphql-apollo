@@ -1,0 +1,7 @@
+.rocketCard {
+  width: 400px;
+  min-height: 200px;
+  padding: 20px 10px;
+  border: 2px solid black;
+  margin-bottom: 20px;
+}
