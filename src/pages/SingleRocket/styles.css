@@ -1,0 +1,33 @@
+.singleRocketWrapper {
+  width: 650px;
+  height: auto;
+  border: 3px solid black;
+  border-radius: 10px;
+  margin: 50px auto;
+  padding: 40px;
+  background-color: rgb(243, 246, 253);
+}
+
+.rocketTitle {
+  text-align: center;
+  font-size: 32px;
+  color: rgb(65, 65, 142);
+}
+
+.rocketPayloadWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.rocket-payload {
+  margin-right: 20px;
+  border: 1px solid black;
+  padding: 5px;
+  margin-bottom: 2px;
+}
+
+.rocket-payload:last-child {
+  margin-right: 0;
+}

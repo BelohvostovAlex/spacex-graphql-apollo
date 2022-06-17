@@ -1,20 +1,26 @@
 import React from 'react';
 
-import { Rocket } from '../generated/graphql';
+import { RocketBlockProps } from './interfaces';
 
 import './styles.css';
 
-export const RocketBlock: React.FC<Rocket> = ({
+export const RocketBlock: React.FC<RocketBlockProps> = ({
+  id,
   name,
   description,
   type,
   engines,
+  onClick,
 }) => {
+  const handleSingleRocketPage = () => {
+    onClick(id!);
+  };
+
   return (
-    <div className="rocketCard">
-      <h1>
+    <div className="rocketCard" onDoubleClick={handleSingleRocketPage}>
+      <h2>
         Type: {type} - {name}
-      </h1>
+      </h2>
       <p>{description}</p>
       <div className="rocketEnginesWrapper">
         <div>{engines?.type}</div>

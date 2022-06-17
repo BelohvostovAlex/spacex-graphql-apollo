@@ -2,9 +2,15 @@ import { gql } from '@apollo/client';
 import * as Apollo from '@apollo/client';
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
-export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
-export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
-export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
+export type Exact<T extends { [key: string]: unknown }> = {
+  [K in keyof T]: T[K];
+};
+export type MakeOptional<T, K extends keyof T> = Omit<T, K> & {
+  [SubKey in K]?: Maybe<T[SubKey]>;
+};
+export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & {
+  [SubKey in K]: Maybe<T[SubKey]>;
+};
 const defaultOptions = {} as const;
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
@@ -457,17 +463,14 @@ export type Mutation = {
   update_users?: Maybe<Users_Mutation_Response>;
 };
 
-
 export type MutationDelete_UsersArgs = {
   where: Users_Bool_Exp;
 };
-
 
 export type MutationInsert_UsersArgs = {
   objects: Array<Users_Insert_Input>;
   on_conflict?: InputMaybe<Users_On_Conflict>;
 };
-
 
 export type MutationUpdate_UsersArgs = {
   _set?: InputMaybe<Users_Set_Input>;
@@ -579,11 +582,9 @@ export type Query = {
   users_by_pk?: Maybe<Users>;
 };
 
-
 export type QueryCapsuleArgs = {
   id: Scalars['ID'];
 };
-
 
 export type QueryCapsulesArgs = {
   find?: InputMaybe<CapsulesFind>;
@@ -593,7 +594,6 @@ export type QueryCapsulesArgs = {
   sort?: InputMaybe<Scalars['String']>;
 };
 
-
 export type QueryCapsulesPastArgs = {
   find?: InputMaybe<CapsulesFind>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -601,7 +601,6 @@ export type QueryCapsulesPastArgs = {
   order?: InputMaybe<Scalars['String']>;
   sort?: InputMaybe<Scalars['String']>;
 };
-
 
 export type QueryCapsulesUpcomingArgs = {
   find?: InputMaybe<CapsulesFind>;
@@ -611,11 +610,9 @@ export type QueryCapsulesUpcomingArgs = {
   sort?: InputMaybe<Scalars['String']>;
 };
 
-
 export type QueryCoreArgs = {
   id: Scalars['ID'];
 };
-
 
 export type QueryCoresArgs = {
   find?: InputMaybe<CoresFind>;
@@ -625,7 +622,6 @@ export type QueryCoresArgs = {
   sort?: InputMaybe<Scalars['String']>;
 };
 
-
 export type QueryCoresPastArgs = {
   find?: InputMaybe<CoresFind>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -633,7 +629,6 @@ export type QueryCoresPastArgs = {
   order?: InputMaybe<Scalars['String']>;
   sort?: InputMaybe<Scalars['String']>;
 };
-
 
 export type QueryCoresUpcomingArgs = {
   find?: InputMaybe<CoresFind>;
@@ -643,17 +638,14 @@ export type QueryCoresUpcomingArgs = {
   sort?: InputMaybe<Scalars['String']>;
 };
 
-
 export type QueryDragonArgs = {
   id: Scalars['ID'];
 };
-
 
 export type QueryDragonsArgs = {
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
 };
-
 
 export type QueryHistoriesArgs = {
   find?: InputMaybe<HistoryFind>;
@@ -663,7 +655,6 @@ export type QueryHistoriesArgs = {
   sort?: InputMaybe<Scalars['String']>;
 };
 
-
 export type QueryHistoriesResultArgs = {
   find?: InputMaybe<HistoryFind>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -672,37 +663,30 @@ export type QueryHistoriesResultArgs = {
   sort?: InputMaybe<Scalars['String']>;
 };
 
-
 export type QueryHistoryArgs = {
   id: Scalars['ID'];
 };
 
-
 export type QueryLandpadArgs = {
   id: Scalars['ID'];
 };
-
 
 export type QueryLandpadsArgs = {
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
 };
 
-
 export type QueryLaunchArgs = {
   id: Scalars['ID'];
 };
-
 
 export type QueryLaunchLatestArgs = {
   offset?: InputMaybe<Scalars['Int']>;
 };
 
-
 export type QueryLaunchNextArgs = {
   offset?: InputMaybe<Scalars['Int']>;
 };
-
 
 export type QueryLaunchesArgs = {
   find?: InputMaybe<LaunchFind>;
@@ -712,7 +696,6 @@ export type QueryLaunchesArgs = {
   sort?: InputMaybe<Scalars['String']>;
 };
 
-
 export type QueryLaunchesPastArgs = {
   find?: InputMaybe<LaunchFind>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -720,7 +703,6 @@ export type QueryLaunchesPastArgs = {
   order?: InputMaybe<Scalars['String']>;
   sort?: InputMaybe<Scalars['String']>;
 };
-
 
 export type QueryLaunchesPastResultArgs = {
   find?: InputMaybe<LaunchFind>;
@@ -730,7 +712,6 @@ export type QueryLaunchesPastResultArgs = {
   sort?: InputMaybe<Scalars['String']>;
 };
 
-
 export type QueryLaunchesUpcomingArgs = {
   find?: InputMaybe<LaunchFind>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -739,22 +720,18 @@ export type QueryLaunchesUpcomingArgs = {
   sort?: InputMaybe<Scalars['String']>;
 };
 
-
 export type QueryLaunchpadArgs = {
   id: Scalars['ID'];
 };
-
 
 export type QueryLaunchpadsArgs = {
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
 };
 
-
 export type QueryMissionArgs = {
   id: Scalars['ID'];
 };
-
 
 export type QueryMissionsArgs = {
   find?: InputMaybe<MissionsFind>;
@@ -762,18 +739,15 @@ export type QueryMissionsArgs = {
   offset?: InputMaybe<Scalars['Int']>;
 };
 
-
 export type QueryMissionsResultArgs = {
   find?: InputMaybe<MissionsFind>;
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
 };
 
-
 export type QueryPayloadArgs = {
   id: Scalars['ID'];
 };
-
 
 export type QueryPayloadsArgs = {
   find?: InputMaybe<PayloadsFind>;
@@ -783,28 +757,23 @@ export type QueryPayloadsArgs = {
   sort?: InputMaybe<Scalars['String']>;
 };
 
-
 export type QueryRocketArgs = {
   id: Scalars['ID'];
 };
-
 
 export type QueryRocketsArgs = {
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
 };
 
-
 export type QueryRocketsResultArgs = {
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
 };
 
-
 export type QueryShipArgs = {
   id: Scalars['ID'];
 };
-
 
 export type QueryShipsArgs = {
   find?: InputMaybe<ShipsFind>;
@@ -814,7 +783,6 @@ export type QueryShipsArgs = {
   sort?: InputMaybe<Scalars['String']>;
 };
 
-
 export type QueryShipsResultArgs = {
   find?: InputMaybe<ShipsFind>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -822,7 +790,6 @@ export type QueryShipsResultArgs = {
   order?: InputMaybe<Scalars['String']>;
   sort?: InputMaybe<Scalars['String']>;
 };
-
 
 export type QueryUsersArgs = {
   distinct_on?: InputMaybe<Array<Users_Select_Column>>;
@@ -832,7 +799,6 @@ export type QueryUsersArgs = {
   where?: InputMaybe<Users_Bool_Exp>;
 };
 
-
 export type QueryUsers_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Users_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -840,7 +806,6 @@ export type QueryUsers_AggregateArgs = {
   order_by?: InputMaybe<Array<Users_Order_By>>;
   where?: InputMaybe<Users_Bool_Exp>;
 };
-
 
 export type QueryUsers_By_PkArgs = {
   id: Scalars['uuid'];
@@ -1068,7 +1033,6 @@ export type Subscription = {
   users_by_pk?: Maybe<Users>;
 };
 
-
 export type SubscriptionUsersArgs = {
   distinct_on?: InputMaybe<Array<Users_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -1077,7 +1041,6 @@ export type SubscriptionUsersArgs = {
   where?: InputMaybe<Users_Bool_Exp>;
 };
 
-
 export type SubscriptionUsers_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Users_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -1085,7 +1048,6 @@ export type SubscriptionUsers_AggregateArgs = {
   order_by?: InputMaybe<Array<Users_Order_By>>;
   where?: InputMaybe<Users_Bool_Exp>;
 };
-
 
 export type SubscriptionUsers_By_PkArgs = {
   id: Scalars['uuid'];
@@ -1102,7 +1064,7 @@ export enum Conflict_Action {
   /** ignore the insert on this row */
   Ignore = 'ignore',
   /** update the row with the given values */
-  Update = 'update'
+  Update = 'update',
 }
 
 /** column ordering options */
@@ -1118,7 +1080,7 @@ export enum Order_By {
   /** in the descending order, nulls first */
   DescNullsFirst = 'desc_nulls_first',
   /** in the descending order, nulls last */
-  DescNullsLast = 'desc_nulls_last'
+  DescNullsLast = 'desc_nulls_last',
 }
 
 /** expression to compare columns of type timestamptz. All fields are combined with logical 'AND'. */
@@ -1159,7 +1121,6 @@ export type Users_Aggregate_Fields = {
   min?: Maybe<Users_Min_Fields>;
 };
 
-
 /** aggregate fields of "users" */
 export type Users_Aggregate_FieldsCountArgs = {
   columns?: InputMaybe<Array<Users_Select_Column>>;
@@ -1194,7 +1155,7 @@ export type Users_Bool_Exp = {
 /** unique or primary key constraints on table "users" */
 export enum Users_Constraint {
   /** unique or primary key constraint */
-  UsersPkey = 'users_pkey'
+  UsersPkey = 'users_pkey',
 }
 
 /** input type for inserting data into table "users" */
@@ -1281,7 +1242,7 @@ export enum Users_Select_Column {
   /** column name */
   Timestamp = 'timestamp',
   /** column name */
-  Twitter = 'twitter'
+  Twitter = 'twitter',
 }
 
 /** input type for updating data in table "users" */
@@ -1304,7 +1265,7 @@ export enum Users_Update_Column {
   /** column name */
   Timestamp = 'timestamp',
   /** column name */
-  Twitter = 'twitter'
+  Twitter = 'twitter',
 }
 
 /** expression to compare columns of type uuid. All fields are combined with logical 'AND'. */
@@ -1320,29 +1281,141 @@ export type Uuid_Comparison_Exp = {
   _nin?: InputMaybe<Array<Scalars['uuid']>>;
 };
 
+export type RocketQueryVariables = Exact<{
+  id: Scalars['ID'];
+}>;
+
+export type RocketQuery = {
+  __typename?: 'Query';
+  rocket?: {
+    __typename?: 'Rocket';
+    id?: string | null;
+    name?: string | null;
+    first_flight?: any | null;
+    first_stage?: {
+      __typename?: 'RocketFirstStage';
+      burn_time_sec?: number | null;
+      engines?: number | null;
+      fuel_amount_tons?: number | null;
+      reusable?: boolean | null;
+    } | null;
+    diameter?: { __typename?: 'Distance'; meters?: number | null } | null;
+    height?: { __typename?: 'Distance'; meters?: number | null } | null;
+    mass?: { __typename?: 'Mass'; kg?: number | null } | null;
+    payload_weights?: Array<{
+      __typename?: 'RocketPayloadWeight';
+      id?: string | null;
+      kg?: number | null;
+      name?: string | null;
+    } | null> | null;
+  } | null;
+};
+
 export type RocketsQueryVariables = Exact<{
   limit?: InputMaybe<Scalars['Int']>;
 }>;
 
+export type RocketsQuery = {
+  __typename?: 'Query';
+  rockets?: Array<{
+    __typename?: 'Rocket';
+    id?: string | null;
+    company?: string | null;
+    description?: string | null;
+    name?: string | null;
+    type?: string | null;
+    engines?: {
+      __typename?: 'RocketEngines';
+      type?: string | null;
+      version?: string | null;
+    } | null;
+  } | null> | null;
+};
 
-export type RocketsQuery = { __typename?: 'Query', rockets?: Array<{ __typename?: 'Rocket', id?: string | null, company?: string | null, description?: string | null, name?: string | null, type?: string | null, engines?: { __typename?: 'RocketEngines', type?: string | null, version?: string | null } | null } | null> | null };
-
-
-export const RocketsDocument = gql`
-    query rockets($limit: Int) {
-  rockets(limit: $limit) {
-    id
-    company
-    description
-    engines {
-      type
-      version
+export const RocketDocument = gql`
+  query rocket($id: ID!) {
+    rocket(id: $id) {
+      id
+      first_flight
+      first_stage {
+        burn_time_sec
+        engines
+        fuel_amount_tons
+        reusable
+      }
+      diameter {
+        meters
+      }
+      height {
+        meters
+      }
+      mass {
+        kg
+      }
+      payload_weights {
+        id
+        kg
+        name
+      }
     }
-    name
-    type
   }
+`;
+
+/**
+ * __useRocketQuery__
+ *
+ * To run a query within a React component, call `useRocketQuery` and pass it any options that fit your needs.
+ * When your component renders, `useRocketQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useRocketQuery({
+ *   variables: {
+ *      id: // value for 'id'
+ *   },
+ * });
+ */
+export function useRocketQuery(
+  baseOptions: Apollo.QueryHookOptions<RocketQuery, RocketQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useQuery<RocketQuery, RocketQueryVariables>(
+    RocketDocument,
+    options
+  );
 }
-    `;
+export function useRocketLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<RocketQuery, RocketQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useLazyQuery<RocketQuery, RocketQueryVariables>(
+    RocketDocument,
+    options
+  );
+}
+export type RocketQueryHookResult = ReturnType<typeof useRocketQuery>;
+export type RocketLazyQueryHookResult = ReturnType<typeof useRocketLazyQuery>;
+export type RocketQueryResult = Apollo.QueryResult<
+  RocketQuery,
+  RocketQueryVariables
+>;
+export const RocketsDocument = gql`
+  query rockets($limit: Int) {
+    rockets(limit: $limit) {
+      id
+      company
+      description
+      engines {
+        type
+        version
+      }
+      name
+      type
+    }
+  }
+`;
 
 /**
  * __useRocketsQuery__
@@ -1360,14 +1433,27 @@ export const RocketsDocument = gql`
  *   },
  * });
  */
-export function useRocketsQuery(baseOptions?: Apollo.QueryHookOptions<RocketsQuery, RocketsQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<RocketsQuery, RocketsQueryVariables>(RocketsDocument, options);
-      }
-export function useRocketsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<RocketsQuery, RocketsQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<RocketsQuery, RocketsQueryVariables>(RocketsDocument, options);
-        }
+export function useRocketsQuery(
+  baseOptions?: Apollo.QueryHookOptions<RocketsQuery, RocketsQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useQuery<RocketsQuery, RocketsQueryVariables>(
+    RocketsDocument,
+    options
+  );
+}
+export function useRocketsLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<RocketsQuery, RocketsQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useLazyQuery<RocketsQuery, RocketsQueryVariables>(
+    RocketsDocument,
+    options
+  );
+}
 export type RocketsQueryHookResult = ReturnType<typeof useRocketsQuery>;
 export type RocketsLazyQueryHookResult = ReturnType<typeof useRocketsLazyQuery>;
-export type RocketsQueryResult = Apollo.QueryResult<RocketsQuery, RocketsQueryVariables>;
+export type RocketsQueryResult = Apollo.QueryResult<
+  RocketsQuery,
+  RocketsQueryVariables
+>;

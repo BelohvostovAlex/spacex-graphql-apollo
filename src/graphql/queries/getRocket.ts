@@ -1,17 +1,31 @@
-import { gql } from "@apollo/client";
+import { gql } from '@apollo/client';
 
 export const GET_ROCKET = gql`
-  query rockets($limit: Int) {
-    rockets(limit: $limit) {
+  query rocket($id: ID!) {
+    rocket(id: $id) {
       id
-      company
-      description
-      engines {
-        type
-        version
+      first_flight
+      first_stage {
+        burn_time_sec
+        engines
+        fuel_amount_tons
+        reusable
+      }
+      diameter {
+        meters
+      }
+      height {
+        meters
+      }
+      mass {
+        kg
       }
       name
-      type
+      payload_weights {
+        id
+        kg
+        name
+      }
     }
   }
-`
+`;
