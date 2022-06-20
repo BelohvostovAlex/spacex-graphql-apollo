@@ -2,15 +2,9 @@ import { gql } from '@apollo/client';
 import * as Apollo from '@apollo/client';
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
-export type Exact<T extends { [key: string]: unknown }> = {
-  [K in keyof T]: T[K];
-};
-export type MakeOptional<T, K extends keyof T> = Omit<T, K> & {
-  [SubKey in K]?: Maybe<T[SubKey]>;
-};
-export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & {
-  [SubKey in K]: Maybe<T[SubKey]>;
-};
+export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
+export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
+export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
 const defaultOptions = {} as const;
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
@@ -463,14 +457,17 @@ export type Mutation = {
   update_users?: Maybe<Users_Mutation_Response>;
 };
 
+
 export type MutationDelete_UsersArgs = {
   where: Users_Bool_Exp;
 };
+
 
 export type MutationInsert_UsersArgs = {
   objects: Array<Users_Insert_Input>;
   on_conflict?: InputMaybe<Users_On_Conflict>;
 };
+
 
 export type MutationUpdate_UsersArgs = {
   _set?: InputMaybe<Users_Set_Input>;
@@ -582,9 +579,11 @@ export type Query = {
   users_by_pk?: Maybe<Users>;
 };
 
+
 export type QueryCapsuleArgs = {
   id: Scalars['ID'];
 };
+
 
 export type QueryCapsulesArgs = {
   find?: InputMaybe<CapsulesFind>;
@@ -594,6 +593,7 @@ export type QueryCapsulesArgs = {
   sort?: InputMaybe<Scalars['String']>;
 };
 
+
 export type QueryCapsulesPastArgs = {
   find?: InputMaybe<CapsulesFind>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -601,6 +601,7 @@ export type QueryCapsulesPastArgs = {
   order?: InputMaybe<Scalars['String']>;
   sort?: InputMaybe<Scalars['String']>;
 };
+
 
 export type QueryCapsulesUpcomingArgs = {
   find?: InputMaybe<CapsulesFind>;
@@ -610,9 +611,11 @@ export type QueryCapsulesUpcomingArgs = {
   sort?: InputMaybe<Scalars['String']>;
 };
 
+
 export type QueryCoreArgs = {
   id: Scalars['ID'];
 };
+
 
 export type QueryCoresArgs = {
   find?: InputMaybe<CoresFind>;
@@ -622,6 +625,7 @@ export type QueryCoresArgs = {
   sort?: InputMaybe<Scalars['String']>;
 };
 
+
 export type QueryCoresPastArgs = {
   find?: InputMaybe<CoresFind>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -629,6 +633,7 @@ export type QueryCoresPastArgs = {
   order?: InputMaybe<Scalars['String']>;
   sort?: InputMaybe<Scalars['String']>;
 };
+
 
 export type QueryCoresUpcomingArgs = {
   find?: InputMaybe<CoresFind>;
@@ -638,14 +643,17 @@ export type QueryCoresUpcomingArgs = {
   sort?: InputMaybe<Scalars['String']>;
 };
 
+
 export type QueryDragonArgs = {
   id: Scalars['ID'];
 };
+
 
 export type QueryDragonsArgs = {
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
 };
+
 
 export type QueryHistoriesArgs = {
   find?: InputMaybe<HistoryFind>;
@@ -655,6 +663,7 @@ export type QueryHistoriesArgs = {
   sort?: InputMaybe<Scalars['String']>;
 };
 
+
 export type QueryHistoriesResultArgs = {
   find?: InputMaybe<HistoryFind>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -663,30 +672,37 @@ export type QueryHistoriesResultArgs = {
   sort?: InputMaybe<Scalars['String']>;
 };
 
+
 export type QueryHistoryArgs = {
   id: Scalars['ID'];
 };
 
+
 export type QueryLandpadArgs = {
   id: Scalars['ID'];
 };
+
 
 export type QueryLandpadsArgs = {
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
 };
 
+
 export type QueryLaunchArgs = {
   id: Scalars['ID'];
 };
+
 
 export type QueryLaunchLatestArgs = {
   offset?: InputMaybe<Scalars['Int']>;
 };
 
+
 export type QueryLaunchNextArgs = {
   offset?: InputMaybe<Scalars['Int']>;
 };
+
 
 export type QueryLaunchesArgs = {
   find?: InputMaybe<LaunchFind>;
@@ -696,6 +712,7 @@ export type QueryLaunchesArgs = {
   sort?: InputMaybe<Scalars['String']>;
 };
 
+
 export type QueryLaunchesPastArgs = {
   find?: InputMaybe<LaunchFind>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -703,6 +720,7 @@ export type QueryLaunchesPastArgs = {
   order?: InputMaybe<Scalars['String']>;
   sort?: InputMaybe<Scalars['String']>;
 };
+
 
 export type QueryLaunchesPastResultArgs = {
   find?: InputMaybe<LaunchFind>;
@@ -712,6 +730,7 @@ export type QueryLaunchesPastResultArgs = {
   sort?: InputMaybe<Scalars['String']>;
 };
 
+
 export type QueryLaunchesUpcomingArgs = {
   find?: InputMaybe<LaunchFind>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -720,18 +739,22 @@ export type QueryLaunchesUpcomingArgs = {
   sort?: InputMaybe<Scalars['String']>;
 };
 
+
 export type QueryLaunchpadArgs = {
   id: Scalars['ID'];
 };
+
 
 export type QueryLaunchpadsArgs = {
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
 };
 
+
 export type QueryMissionArgs = {
   id: Scalars['ID'];
 };
+
 
 export type QueryMissionsArgs = {
   find?: InputMaybe<MissionsFind>;
@@ -739,15 +762,18 @@ export type QueryMissionsArgs = {
   offset?: InputMaybe<Scalars['Int']>;
 };
 
+
 export type QueryMissionsResultArgs = {
   find?: InputMaybe<MissionsFind>;
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
 };
 
+
 export type QueryPayloadArgs = {
   id: Scalars['ID'];
 };
+
 
 export type QueryPayloadsArgs = {
   find?: InputMaybe<PayloadsFind>;
@@ -757,23 +783,28 @@ export type QueryPayloadsArgs = {
   sort?: InputMaybe<Scalars['String']>;
 };
 
+
 export type QueryRocketArgs = {
   id: Scalars['ID'];
 };
+
 
 export type QueryRocketsArgs = {
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
 };
 
+
 export type QueryRocketsResultArgs = {
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
 };
 
+
 export type QueryShipArgs = {
   id: Scalars['ID'];
 };
+
 
 export type QueryShipsArgs = {
   find?: InputMaybe<ShipsFind>;
@@ -783,6 +814,7 @@ export type QueryShipsArgs = {
   sort?: InputMaybe<Scalars['String']>;
 };
 
+
 export type QueryShipsResultArgs = {
   find?: InputMaybe<ShipsFind>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -790,6 +822,7 @@ export type QueryShipsResultArgs = {
   order?: InputMaybe<Scalars['String']>;
   sort?: InputMaybe<Scalars['String']>;
 };
+
 
 export type QueryUsersArgs = {
   distinct_on?: InputMaybe<Array<Users_Select_Column>>;
@@ -799,6 +832,7 @@ export type QueryUsersArgs = {
   where?: InputMaybe<Users_Bool_Exp>;
 };
 
+
 export type QueryUsers_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Users_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -806,6 +840,7 @@ export type QueryUsers_AggregateArgs = {
   order_by?: InputMaybe<Array<Users_Order_By>>;
   where?: InputMaybe<Users_Bool_Exp>;
 };
+
 
 export type QueryUsers_By_PkArgs = {
   id: Scalars['uuid'];
@@ -1033,6 +1068,7 @@ export type Subscription = {
   users_by_pk?: Maybe<Users>;
 };
 
+
 export type SubscriptionUsersArgs = {
   distinct_on?: InputMaybe<Array<Users_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -1041,6 +1077,7 @@ export type SubscriptionUsersArgs = {
   where?: InputMaybe<Users_Bool_Exp>;
 };
 
+
 export type SubscriptionUsers_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Users_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -1048,6 +1085,7 @@ export type SubscriptionUsers_AggregateArgs = {
   order_by?: InputMaybe<Array<Users_Order_By>>;
   where?: InputMaybe<Users_Bool_Exp>;
 };
+
 
 export type SubscriptionUsers_By_PkArgs = {
   id: Scalars['uuid'];
@@ -1064,7 +1102,7 @@ export enum Conflict_Action {
   /** ignore the insert on this row */
   Ignore = 'ignore',
   /** update the row with the given values */
-  Update = 'update',
+  Update = 'update'
 }
 
 /** column ordering options */
@@ -1080,7 +1118,7 @@ export enum Order_By {
   /** in the descending order, nulls first */
   DescNullsFirst = 'desc_nulls_first',
   /** in the descending order, nulls last */
-  DescNullsLast = 'desc_nulls_last',
+  DescNullsLast = 'desc_nulls_last'
 }
 
 /** expression to compare columns of type timestamptz. All fields are combined with logical 'AND'. */
@@ -1121,6 +1159,7 @@ export type Users_Aggregate_Fields = {
   min?: Maybe<Users_Min_Fields>;
 };
 
+
 /** aggregate fields of "users" */
 export type Users_Aggregate_FieldsCountArgs = {
   columns?: InputMaybe<Array<Users_Select_Column>>;
@@ -1155,7 +1194,7 @@ export type Users_Bool_Exp = {
 /** unique or primary key constraints on table "users" */
 export enum Users_Constraint {
   /** unique or primary key constraint */
-  UsersPkey = 'users_pkey',
+  UsersPkey = 'users_pkey'
 }
 
 /** input type for inserting data into table "users" */
@@ -1242,7 +1281,7 @@ export enum Users_Select_Column {
   /** column name */
   Timestamp = 'timestamp',
   /** column name */
-  Twitter = 'twitter',
+  Twitter = 'twitter'
 }
 
 /** input type for updating data in table "users" */
@@ -1265,7 +1304,7 @@ export enum Users_Update_Column {
   /** column name */
   Timestamp = 'timestamp',
   /** column name */
-  Twitter = 'twitter',
+  Twitter = 'twitter'
 }
 
 /** expression to compare columns of type uuid. All fields are combined with logical 'AND'. */
@@ -1281,85 +1320,191 @@ export type Uuid_Comparison_Exp = {
   _nin?: InputMaybe<Array<Scalars['uuid']>>;
 };
 
+export type Insert_UsersMutationVariables = Exact<{
+  objects: Array<Users_Insert_Input> | Users_Insert_Input;
+}>;
+
+
+export type Insert_UsersMutation = { __typename?: 'Mutation', insert_users?: { __typename?: 'users_mutation_response', returning: Array<{ __typename?: 'users', id: any, name?: string | null, rocket?: string | null }> } | null };
+
+export type Delete_UsersMutationVariables = Exact<{
+  where: Users_Bool_Exp;
+}>;
+
+
+export type Delete_UsersMutation = { __typename?: 'Mutation', delete_users?: { __typename?: 'users_mutation_response', returning: Array<{ __typename?: 'users', name?: string | null, id: any }> } | null };
+
+export type Update_UsersMutationVariables = Exact<{
+  _set?: InputMaybe<Users_Set_Input>;
+  where: Users_Bool_Exp;
+}>;
+
+
+export type Update_UsersMutation = { __typename?: 'Mutation', update_users?: { __typename?: 'users_mutation_response', returning: Array<{ __typename?: 'users', id: any, name?: string | null, rocket?: string | null, timestamp: any }> } | null };
+
 export type RocketQueryVariables = Exact<{
   id: Scalars['ID'];
 }>;
 
-export type RocketQuery = {
-  __typename?: 'Query';
-  rocket?: {
-    __typename?: 'Rocket';
-    id?: string | null;
-    name?: string | null;
-    first_flight?: any | null;
-    first_stage?: {
-      __typename?: 'RocketFirstStage';
-      burn_time_sec?: number | null;
-      engines?: number | null;
-      fuel_amount_tons?: number | null;
-      reusable?: boolean | null;
-    } | null;
-    diameter?: { __typename?: 'Distance'; meters?: number | null } | null;
-    height?: { __typename?: 'Distance'; meters?: number | null } | null;
-    mass?: { __typename?: 'Mass'; kg?: number | null } | null;
-    payload_weights?: Array<{
-      __typename?: 'RocketPayloadWeight';
-      id?: string | null;
-      kg?: number | null;
-      name?: string | null;
-    } | null> | null;
-  } | null;
-};
+
+export type RocketQuery = { __typename?: 'Query', rocket?: { __typename?: 'Rocket', id?: string | null, first_flight?: any | null, name?: string | null, first_stage?: { __typename?: 'RocketFirstStage', burn_time_sec?: number | null, engines?: number | null, fuel_amount_tons?: number | null, reusable?: boolean | null } | null, diameter?: { __typename?: 'Distance', meters?: number | null } | null, height?: { __typename?: 'Distance', meters?: number | null } | null, mass?: { __typename?: 'Mass', kg?: number | null } | null, payload_weights?: Array<{ __typename?: 'RocketPayloadWeight', id?: string | null, kg?: number | null, name?: string | null } | null> | null } | null };
 
 export type RocketsQueryVariables = Exact<{
   limit?: InputMaybe<Scalars['Int']>;
 }>;
 
-export type RocketsQuery = {
-  __typename?: 'Query';
-  rockets?: Array<{
-    __typename?: 'Rocket';
-    id?: string | null;
-    company?: string | null;
-    description?: string | null;
-    name?: string | null;
-    type?: string | null;
-    engines?: {
-      __typename?: 'RocketEngines';
-      type?: string | null;
-      version?: string | null;
-    } | null;
-  } | null> | null;
-};
 
-export const RocketDocument = gql`
-  query rocket($id: ID!) {
-    rocket(id: $id) {
+export type RocketsQuery = { __typename?: 'Query', rockets?: Array<{ __typename?: 'Rocket', id?: string | null, company?: string | null, description?: string | null, name?: string | null, type?: string | null, engines?: { __typename?: 'RocketEngines', type?: string | null, version?: string | null } | null } | null> | null };
+
+export type UsersQueryVariables = Exact<{
+  limit?: InputMaybe<Scalars['Int']>;
+}>;
+
+
+export type UsersQuery = { __typename?: 'Query', users: Array<{ __typename?: 'users', id: any, name?: string | null, rocket?: string | null, twitter?: string | null }> };
+
+
+export const Insert_UsersDocument = gql`
+    mutation insert_users($objects: [users_insert_input!]!) {
+  insert_users(objects: $objects) {
+    returning {
       id
-      first_flight
-      first_stage {
-        burn_time_sec
-        engines
-        fuel_amount_tons
-        reusable
-      }
-      diameter {
-        meters
-      }
-      height {
-        meters
-      }
-      mass {
-        kg
-      }
-      payload_weights {
-        id
-        kg
-        name
-      }
+      name
+      rocket
     }
   }
-`;
+}
+    `;
+export type Insert_UsersMutationFn = Apollo.MutationFunction<Insert_UsersMutation, Insert_UsersMutationVariables>;
+
+/**
+ * __useInsert_UsersMutation__
+ *
+ * To run a mutation, you first call `useInsert_UsersMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useInsert_UsersMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [insertUsersMutation, { data, loading, error }] = useInsert_UsersMutation({
+ *   variables: {
+ *      objects: // value for 'objects'
+ *   },
+ * });
+ */
+export function useInsert_UsersMutation(baseOptions?: Apollo.MutationHookOptions<Insert_UsersMutation, Insert_UsersMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useMutation<Insert_UsersMutation, Insert_UsersMutationVariables>(Insert_UsersDocument, options);
+      }
+export type Insert_UsersMutationHookResult = ReturnType<typeof useInsert_UsersMutation>;
+export type Insert_UsersMutationResult = Apollo.MutationResult<Insert_UsersMutation>;
+export type Insert_UsersMutationOptions = Apollo.BaseMutationOptions<Insert_UsersMutation, Insert_UsersMutationVariables>;
+export const Delete_UsersDocument = gql`
+    mutation delete_users($where: users_bool_exp!) {
+  delete_users(where: $where) {
+    returning {
+      name
+      id
+    }
+  }
+}
+    `;
+export type Delete_UsersMutationFn = Apollo.MutationFunction<Delete_UsersMutation, Delete_UsersMutationVariables>;
+
+/**
+ * __useDelete_UsersMutation__
+ *
+ * To run a mutation, you first call `useDelete_UsersMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useDelete_UsersMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [deleteUsersMutation, { data, loading, error }] = useDelete_UsersMutation({
+ *   variables: {
+ *      where: // value for 'where'
+ *   },
+ * });
+ */
+export function useDelete_UsersMutation(baseOptions?: Apollo.MutationHookOptions<Delete_UsersMutation, Delete_UsersMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useMutation<Delete_UsersMutation, Delete_UsersMutationVariables>(Delete_UsersDocument, options);
+      }
+export type Delete_UsersMutationHookResult = ReturnType<typeof useDelete_UsersMutation>;
+export type Delete_UsersMutationResult = Apollo.MutationResult<Delete_UsersMutation>;
+export type Delete_UsersMutationOptions = Apollo.BaseMutationOptions<Delete_UsersMutation, Delete_UsersMutationVariables>;
+export const Update_UsersDocument = gql`
+    mutation update_users($_set: users_set_input, $where: users_bool_exp!) {
+  update_users(_set: $_set, where: $where) {
+    returning {
+      id
+      name
+      rocket
+      timestamp
+    }
+  }
+}
+    `;
+export type Update_UsersMutationFn = Apollo.MutationFunction<Update_UsersMutation, Update_UsersMutationVariables>;
+
+/**
+ * __useUpdate_UsersMutation__
+ *
+ * To run a mutation, you first call `useUpdate_UsersMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useUpdate_UsersMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [updateUsersMutation, { data, loading, error }] = useUpdate_UsersMutation({
+ *   variables: {
+ *      _set: // value for '_set'
+ *      where: // value for 'where'
+ *   },
+ * });
+ */
+export function useUpdate_UsersMutation(baseOptions?: Apollo.MutationHookOptions<Update_UsersMutation, Update_UsersMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useMutation<Update_UsersMutation, Update_UsersMutationVariables>(Update_UsersDocument, options);
+      }
+export type Update_UsersMutationHookResult = ReturnType<typeof useUpdate_UsersMutation>;
+export type Update_UsersMutationResult = Apollo.MutationResult<Update_UsersMutation>;
+export type Update_UsersMutationOptions = Apollo.BaseMutationOptions<Update_UsersMutation, Update_UsersMutationVariables>;
+export const RocketDocument = gql`
+    query rocket($id: ID!) {
+  rocket(id: $id) {
+    id
+    first_flight
+    first_stage {
+      burn_time_sec
+      engines
+      fuel_amount_tons
+      reusable
+    }
+    diameter {
+      meters
+    }
+    height {
+      meters
+    }
+    mass {
+      kg
+    }
+    name
+    payload_weights {
+      id
+      kg
+      name
+    }
+  }
+}
+    `;
 
 /**
  * __useRocketQuery__
@@ -1377,45 +1522,32 @@ export const RocketDocument = gql`
  *   },
  * });
  */
-export function useRocketQuery(
-  baseOptions: Apollo.QueryHookOptions<RocketQuery, RocketQueryVariables>
-) {
-  const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useQuery<RocketQuery, RocketQueryVariables>(
-    RocketDocument,
-    options
-  );
-}
-export function useRocketLazyQuery(
-  baseOptions?: Apollo.LazyQueryHookOptions<RocketQuery, RocketQueryVariables>
-) {
-  const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useLazyQuery<RocketQuery, RocketQueryVariables>(
-    RocketDocument,
-    options
-  );
-}
+export function useRocketQuery(baseOptions: Apollo.QueryHookOptions<RocketQuery, RocketQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<RocketQuery, RocketQueryVariables>(RocketDocument, options);
+      }
+export function useRocketLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<RocketQuery, RocketQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<RocketQuery, RocketQueryVariables>(RocketDocument, options);
+        }
 export type RocketQueryHookResult = ReturnType<typeof useRocketQuery>;
 export type RocketLazyQueryHookResult = ReturnType<typeof useRocketLazyQuery>;
-export type RocketQueryResult = Apollo.QueryResult<
-  RocketQuery,
-  RocketQueryVariables
->;
+export type RocketQueryResult = Apollo.QueryResult<RocketQuery, RocketQueryVariables>;
 export const RocketsDocument = gql`
-  query rockets($limit: Int) {
-    rockets(limit: $limit) {
-      id
-      company
-      description
-      engines {
-        type
-        version
-      }
-      name
+    query rockets($limit: Int) {
+  rockets(limit: $limit) {
+    id
+    company
+    description
+    engines {
       type
+      version
     }
+    name
+    type
   }
-`;
+}
+    `;
 
 /**
  * __useRocketsQuery__
@@ -1433,27 +1565,52 @@ export const RocketsDocument = gql`
  *   },
  * });
  */
-export function useRocketsQuery(
-  baseOptions?: Apollo.QueryHookOptions<RocketsQuery, RocketsQueryVariables>
-) {
-  const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useQuery<RocketsQuery, RocketsQueryVariables>(
-    RocketsDocument,
-    options
-  );
-}
-export function useRocketsLazyQuery(
-  baseOptions?: Apollo.LazyQueryHookOptions<RocketsQuery, RocketsQueryVariables>
-) {
-  const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useLazyQuery<RocketsQuery, RocketsQueryVariables>(
-    RocketsDocument,
-    options
-  );
-}
+export function useRocketsQuery(baseOptions?: Apollo.QueryHookOptions<RocketsQuery, RocketsQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<RocketsQuery, RocketsQueryVariables>(RocketsDocument, options);
+      }
+export function useRocketsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<RocketsQuery, RocketsQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<RocketsQuery, RocketsQueryVariables>(RocketsDocument, options);
+        }
 export type RocketsQueryHookResult = ReturnType<typeof useRocketsQuery>;
 export type RocketsLazyQueryHookResult = ReturnType<typeof useRocketsLazyQuery>;
-export type RocketsQueryResult = Apollo.QueryResult<
-  RocketsQuery,
-  RocketsQueryVariables
->;
+export type RocketsQueryResult = Apollo.QueryResult<RocketsQuery, RocketsQueryVariables>;
+export const UsersDocument = gql`
+    query users($limit: Int) {
+  users(limit: $limit) {
+    id
+    name
+    rocket
+    twitter
+  }
+}
+    `;
+
+/**
+ * __useUsersQuery__
+ *
+ * To run a query within a React component, call `useUsersQuery` and pass it any options that fit your needs.
+ * When your component renders, `useUsersQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useUsersQuery({
+ *   variables: {
+ *      limit: // value for 'limit'
+ *   },
+ * });
+ */
+export function useUsersQuery(baseOptions?: Apollo.QueryHookOptions<UsersQuery, UsersQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<UsersQuery, UsersQueryVariables>(UsersDocument, options);
+      }
+export function useUsersLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<UsersQuery, UsersQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<UsersQuery, UsersQueryVariables>(UsersDocument, options);
+        }
+export type UsersQueryHookResult = ReturnType<typeof useUsersQuery>;
+export type UsersLazyQueryHookResult = ReturnType<typeof useUsersLazyQuery>;
+export type UsersQueryResult = Apollo.QueryResult<UsersQuery, UsersQueryVariables>;
