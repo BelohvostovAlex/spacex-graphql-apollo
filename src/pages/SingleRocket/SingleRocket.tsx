@@ -1,23 +1,14 @@
 import React from 'react';
-
-import { useQuery } from '@apollo/client';
-import { GET_ROCKET } from '../../graphql/queries/getRocket';
 import { Link, useParams } from 'react-router-dom';
-import { RocketQuery, RocketQueryVariables } from '../../generated/graphql';
+
+import { useGetRocket } from '../../hooks/rocket/useGetRocket';
 
 import './styles.css';
 
 export const SingleRocket: React.FC = () => {
   const { id } = useParams();
 
-  const { data, loading } = useQuery<RocketQuery, RocketQueryVariables>(
-    GET_ROCKET,
-    {
-      variables: {
-        id: id!,
-      },
-    }
-  );
+  const { data, loading } = useGetRocket(id!);
 
   if (!data?.rocket) {
     return null;

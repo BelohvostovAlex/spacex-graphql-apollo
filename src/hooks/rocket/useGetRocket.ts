@@ -1,6 +1,9 @@
 import { gql } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 
-export const GET_ROCKET = gql`
+import { RocketQuery, RocketQueryVariables } from '../../generated/graphql';
+
+export const GET_ROCKET = gql/* GraphQL */`
   query rocket($id: ID!) {
     rocket(id: $id) {
       id
@@ -29,3 +32,16 @@ export const GET_ROCKET = gql`
     }
   }
 `;
+
+export const useGetRocket = (id: string) => {
+  const { data, loading } = useQuery<RocketQuery, RocketQueryVariables>(
+    GET_ROCKET,
+    {
+      variables: {
+        id: id!,
+      },
+    }
+  );
+
+  return { data, loading };
+};
